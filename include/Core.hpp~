@@ -1,0 +1,33 @@
+/*
+** EPITECH PROJECT, 2018
+** Arcade
+** File description:
+** Core.hpp
+*/
+
+#ifndef ARCADE_CORE_HPP
+#define ARCADE_CORE_HPP
+
+#include <iostream>
+#include <map>
+#include "IGraphicLib.hpp"
+
+class Core {
+public:
+	explicit Core(const std::string &lib);
+	~Core();
+	Arcade::IGraphicLib *load();
+	void set_lib(const std::string &lib);
+	void set_game(const std::string &game);
+	std::string &get_name_lib();
+private:
+	void *_open_lib;
+	long _score;
+	std::string _player;
+	std::string _game;
+	std::string _lib;
+	std::map<std::string, std::string> _gph_path;
+	std::map<std::string, std::string> _game_path;
+};
+
+#endif /* !ARCADE_CORE_HPP */
